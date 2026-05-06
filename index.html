@@ -269,30 +269,45 @@
   }
 
   /* REVIEWS */
-  #reviews { padding: 100px 88px; }
+  #reviews { padding: 100px 0; }
+  #reviews .section-label { padding: 0 88px; margin-bottom: 32px; }
+  .reviews-slider {
+    overflow: hidden;
+    position: relative;
+  }
+  .reviews-slider::before,
+  .reviews-slider::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 120px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .reviews-slider::before { left: 0; background: linear-gradient(to right, #F0EFEB, transparent); }
+  .reviews-slider::after  { right: 0; background: linear-gradient(to left,  #F0EFEB, transparent); }
   .reviews-track {
     display: flex;
     gap: 14px;
-    overflow-x: auto;
-    padding-bottom: 4px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    width: max-content;
+    animation: marquee 32s linear infinite;
   }
-  .reviews-track::-webkit-scrollbar { display: none; }
+  .reviews-track:hover { animation-play-state: paused; }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
   .review-card {
     background: #fff;
     border-radius: 18px;
     padding: 28px 26px;
-    min-width: 300px;
-    max-width: 320px;
+    width: 320px;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 28px;
-    transition: transform 0.3s;
   }
-  .review-card:hover { transform: translateY(-3px); }
   .review-text {
     font-size: 13.5px;
     line-height: 1.72;
@@ -592,8 +607,10 @@
 <!-- REVIEWS -->
 <section id="reviews">
   <h2 class="section-label reveal">What Colleagues Are Saying</h2>
+  <div class="reviews-slider">
   <div class="reviews-track">
-    <div class="review-card reveal d1">
+    <!-- original set -->
+    <div class="review-card">
       <p class="review-text">Valentina is an outstanding Product Growth Designer who combines strong UX/UI skills with leadership, driving growth and elevating team collaboration.</p>
       <div class="review-author">
         <div class="review-avatar">A</div>
@@ -603,7 +620,7 @@
         </div>
       </div>
     </div>
-    <div class="review-card reveal d2">
+    <div class="review-card">
       <p class="review-text">Valentina is talented, professional, and a joy to work with — her approach turns challenges into smart, thoughtful solutions.</p>
       <div class="review-author">
         <div class="review-avatar">B</div>
@@ -613,7 +630,7 @@
         </div>
       </div>
     </div>
-    <div class="review-card reveal d3">
+    <div class="review-card">
       <p class="review-text">Valentina is a thoughtful designer who asks the right questions, creates purposeful solutions tied to business goals, and combines sharp thinking with excellent soft skills.</p>
       <div class="review-author">
         <div class="review-avatar">C</div>
@@ -623,7 +640,7 @@
         </div>
       </div>
     </div>
-    <div class="review-card reveal d4">
+    <div class="review-card">
       <p class="review-text">Valentina's perfectionism, skills, and communication always ensure results beyond expectations.</p>
       <div class="review-author">
         <div class="review-avatar">D</div>
@@ -633,7 +650,7 @@
         </div>
       </div>
     </div>
-    <div class="review-card reveal d5">
+    <div class="review-card">
       <p class="review-text">Valentina is a holistic UX/UI designer with deep business understanding, whose designs consistently drive engagement and app success.</p>
       <div class="review-author">
         <div class="review-avatar">E</div>
@@ -643,6 +660,58 @@
         </div>
       </div>
     </div>
+    <!-- duplicate set for seamless loop -->
+    <div class="review-card">
+      <p class="review-text">Valentina is an outstanding Product Growth Designer who combines strong UX/UI skills with leadership, driving growth and elevating team collaboration.</p>
+      <div class="review-author">
+        <div class="review-avatar">A</div>
+        <div>
+          <div class="review-name">Name Surname</div>
+          <div class="review-role">Head of Design</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <p class="review-text">Valentina is talented, professional, and a joy to work with — her approach turns challenges into smart, thoughtful solutions.</p>
+      <div class="review-author">
+        <div class="review-avatar">B</div>
+        <div>
+          <div class="review-name">Name Surname</div>
+          <div class="review-role">Growth Manager</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <p class="review-text">Valentina is a thoughtful designer who asks the right questions, creates purposeful solutions tied to business goals, and combines sharp thinking with excellent soft skills.</p>
+      <div class="review-author">
+        <div class="review-avatar">C</div>
+        <div>
+          <div class="review-name">Name Surname</div>
+          <div class="review-role">Growth Manager</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <p class="review-text">Valentina's perfectionism, skills, and communication always ensure results beyond expectations.</p>
+      <div class="review-author">
+        <div class="review-avatar">D</div>
+        <div>
+          <div class="review-name">Name Surname</div>
+          <div class="review-role">Product Manager</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <p class="review-text">Valentina is a holistic UX/UI designer with deep business understanding, whose designs consistently drive engagement and app success.</p>
+      <div class="review-author">
+        <div class="review-avatar">E</div>
+        <div>
+          <div class="review-name">Name Surname</div>
+          <div class="review-role">Product Manager</div>
+        </div>
+      </div>
+    </div>
+  </div>
   </div>
 </section>
 
