@@ -231,17 +231,22 @@
   #about {
     padding: 100px 48px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 0.55fr;
     gap: 100px;
     align-items: start;
   }
+  .about-left { }
+  .about-right {
+    position: sticky;
+    top: 88px;
+  }
   .about-text {
-    font-size: 20px;
-    line-height: 1.65;
+    font-size: 34px;
+    line-height: 1.35;
     font-weight: 400;
     letter-spacing: -0.025em;
     color: #1a1a1a;
-    margin-bottom: 28px;
+    margin-bottom: 40px;
   }
   .skills-label {
     font-size: 11px;
@@ -548,11 +553,11 @@
 
 <!-- ABOUT -->
 <section id="about">
-  <div>
+  <div class="about-left">
     <p class="about-text reveal">I design for business impact, turning UX into measurable growth. Using no-code builders such as Adapty, Superwall and Revenue Cat, I ship fast, save dev resources, and focus on what drives conversion and retention.</p>
     <p class="about-text reveal d2">I've built my career around growth design — onboarding flows, paywalls, and retention features that directly move business metrics. I've worked on products with millions of users and significant revenue, across mobile apps and digital platforms.</p>
   </div>
-  <div class="reveal d2">
+  <div class="about-right reveal d2">
     <div class="skills-label">Skills</div>
     <ul class="skills-list">
       <li>Product Design</li>
