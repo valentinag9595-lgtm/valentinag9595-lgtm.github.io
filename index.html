@@ -26,7 +26,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 22px 48px;
+    padding: 22px 88px;
     background: #F0EFEB;
   }
   .nav-name {
@@ -54,7 +54,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 120px 48px 90px;
+    padding: 120px 88px 90px;
     position: relative;
   }
   .hero-title {
@@ -147,7 +147,7 @@
   }
 
   /* WORK */
-  #work { padding: 80px 48px 100px; }
+  #work { padding: 80px 88px 100px; }
   .section-label {
     font-size: 20px;
     font-weight: 400;
@@ -229,7 +229,7 @@
 
   /* ABOUT */
   #about {
-    padding: 100px 48px;
+    padding: 100px 88px;
     display: grid;
     grid-template-columns: 1fr 0.55fr;
     gap: 100px;
@@ -269,7 +269,7 @@
   }
 
   /* REVIEWS */
-  #reviews { padding: 100px 48px; }
+  #reviews { padding: 100px 88px; }
   .reviews-track {
     display: flex;
     gap: 14px;
@@ -333,7 +333,7 @@
     display: grid;
     grid-template-columns: 1.4fr 0.8fr 1fr;
     gap: 60px;
-    padding: 80px 48px 60px;
+    padding: 80px 88px 60px;
     align-items: start;
   }
   .contact-eyebrow {
@@ -428,7 +428,7 @@
   footer {
     background: #1a1a1a;
     border-top: 1px solid rgba(255,255,255,0.06);
-    padding: 18px 48px;
+    padding: 18px 88px;
     text-align: center;
   }
   footer p { font-size: 12px; color: #3a3a3a; }
@@ -457,6 +457,17 @@
     #contact { grid-template-columns: 1fr; gap: 40px; padding: 60px 24px; }
     footer { padding: 18px 24px; }
     .scroll-arrow { display: none; }
+  }
+  @media (min-width: 821px) and (max-width: 1200px) {
+    nav, #hero, #work, #reviews, #about, #contact, footer {
+      padding-left: 48px;
+      padding-right: 48px;
+    }
+    #hero { padding-top: 120px; padding-bottom: 90px; }
+    #work { padding-top: 80px; padding-bottom: 100px; }
+    #reviews { padding-top: 100px; padding-bottom: 100px; }
+    #about { padding-top: 100px; padding-bottom: 100px; }
+    #contact { padding-top: 80px; padding-bottom: 60px; }
   }
 </style>
 </head>
