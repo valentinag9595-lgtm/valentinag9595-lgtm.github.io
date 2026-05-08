@@ -108,7 +108,8 @@
   /* SECTIONS GRID */
   .sections-grid {
     display: grid; grid-template-columns: 1fr 1fr;
-    gap: 0; margin-bottom: 64px;
+    gap: 0; margin-bottom: 0;
+    max-width: 1064px; margin-left: auto; margin-right: auto; margin-bottom: 64px;
   }
   .section-cell { padding: 40px 0; border-top: 1px solid rgba(0,0,0,0.1); }
   .section-cell:nth-child(odd) { padding-right: 48px; }
@@ -155,7 +156,8 @@
   .impact-desc { font-size: 12px; color: #999; line-height: 1.5; }
 
   /* OTHER WORKS */
-  .other-works { border-top: 1px solid rgba(0,0,0,0.1); padding: 56px 0 100px; margin-top: 64px; }
+  .other-works { border-top: 1px solid rgba(0,0,0,0.1); padding: 56px 0 100px; margin-top: 0; }
+  .other-works-inner { max-width: 1064px; margin-left: auto; margin-right: auto; }
   .other-works-title { font-size: 22px; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 28px; }
   .other-works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
   .work-card {
@@ -360,6 +362,7 @@
 
   <!-- OTHER WORKS -->
   <div class="other-works">
+    <div class="other-works-inner">
     <div class="other-works-title reveal">Other Works</div>
     <div class="other-works-grid">
       <a href="/cases/project-2/" class="work-card reveal d1">
@@ -384,6 +387,7 @@
         </div>
       </a>
     </div>
+    </div><!-- /other-works-inner -->
   </div>
 
 </div>
