@@ -3,320 +3,146 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Project 3 — Valentina Gushchina</title>
+<title>Anisad — Real Estate — Valentina Gushchina</title>
+<link rel="icon" type="image/png" href="/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    background: #F0EFEB;
-    color: #1a1a1a;
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased;
+    background: #F0EFEB; color: #1a1a1a;
+    font-weight: 400; -webkit-font-smoothing: antialiased;
   }
-
-  /* NAV */
   nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 16px 48px;
-    background: #F0EFEB;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: center; align-items: center;
+    padding: 16px 88px; background: #F0EFEB;
     animation: navDown 0.7s both;
   }
-  @keyframes navDown {
-    from { opacity: 0; transform: translateY(-12px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .nav-inner {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
+  @keyframes navDown { from { opacity:0; transform:translateY(-12px); } to { opacity:1; transform:translateY(0); } }
+  .nav-inner { display: flex; align-items: center; gap: 16px; }
   .nav-back {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 34px; height: 34px;
-    border-radius: 50%;
-    background: transparent;
+    display: flex; align-items: center; justify-content: center;
+    width: 34px; height: 34px; border-radius: 50%;
     border: 1px solid rgba(0,0,0,0.15);
-    text-decoration: none;
-    color: #1a1a1a;
-    transition: background 0.2s;
-    flex-shrink: 0;
+    text-decoration: none; color: #1a1a1a; transition: background 0.2s;
   }
   .nav-back:hover { background: rgba(0,0,0,0.05); }
   .btn-connect {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: #1a1a1a;
-    color: #fff;
-    text-decoration: none;
-    font-size: 14px;
-    padding: 8px 16px 8px 8px;
-    border-radius: 100px;
-    transition: opacity 0.2s;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #1a1a1a; color: #fff; text-decoration: none;
+    font-size: 14px; padding: 8px 16px 8px 8px;
+    border-radius: 100px; transition: opacity 0.2s;
   }
   .btn-connect:hover { opacity: 0.8; }
   .btn-connect-avatar {
-    width: 26px; height: 26px;
-    border-radius: 50%;
-    background: #444;
+    width: 26px; height: 26px; border-radius: 50%;
+    background: #444; overflow: hidden; flex-shrink: 0;
     display: flex; align-items: center; justify-content: center;
     font-size: 11px; color: #fff; font-weight: 500;
-    overflow: hidden;
-    flex-shrink: 0;
   }
   .btn-connect-avatar img { width:100%; height:100%; object-fit:cover; }
 
-  /* PAGE WRAP */
-  .page-wrap {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 88px;
-  }
+  .page-wrap { max-width: 1440px; margin: 0 auto; padding: 0 88px; }
 
-  /* HERO */
   .case-hero {
-    padding-top: 110px;
-    padding-bottom: 48px;
-    opacity: 0;
-    animation: fadeUp 0.9s 0.15s cubic-bezier(0.22,1,0.36,1) forwards;
+    padding-top: 110px; padding-bottom: 48px;
+    max-width: 1064px; margin-left: auto; margin-right: auto;
+    opacity: 0; animation: fadeUp 0.9s 0.15s cubic-bezier(0.22,1,0.36,1) forwards;
   }
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
   .case-title {
-    font-size: clamp(32px, 5vw, 56px);
-    font-weight: 400;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
-    color: #1a1a1a;
-    margin-bottom: 32px;
+    font-size: clamp(32px, 5vw, 56px); font-weight: 400;
+    letter-spacing: -0.03em; line-height: 1.1; color: #1a1a1a; margin-bottom: 32px;
   }
-
-  /* META */
   .meta-row {
-    display: flex;
-    gap: 48px;
-    flex-wrap: wrap;
-    opacity: 0;
-    animation: fadeUp 0.9s 0.28s cubic-bezier(0.22,1,0.36,1) forwards;
+    display: flex; gap: 48px; flex-wrap: wrap;
+    opacity: 0; animation: fadeUp 0.9s 0.28s cubic-bezier(0.22,1,0.36,1) forwards;
   }
   .meta-col { display: flex; flex-direction: column; gap: 4px; }
-  .meta-label {
-    font-size: 12px;
-    color: #999;
-    font-weight: 400;
-  }
-  .meta-value {
-    font-size: 15px;
-    color: #1a1a1a;
-    font-weight: 400;
-  }
+  .meta-label { font-size: 12px; color: #999; }
+  .meta-value { font-size: 15px; color: #1a1a1a; }
 
-  /* COVER CARD */
   .cover-card {
-    background: #fff;
-    border-radius: 24px;
-    overflow: hidden;
-    margin-bottom: 64px;
-    opacity: 0;
-    animation: fadeUp 0.9s 0.4s cubic-bezier(0.22,1,0.36,1) forwards;
-    min-height: 360px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: #fff; border-radius: 24px; overflow: hidden;
+    margin-bottom: 64px; width: 1064px; max-width: 1064px;
+    margin-left: auto; margin-right: auto;
+    opacity: 0; animation: fadeUp 0.9s 0.4s cubic-bezier(0.22,1,0.36,1) forwards;
   }
-  .cover-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .cover-placeholder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    color: #bbb;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 80px 0;
-  }
+  .cover-card img { width: 100%; height: auto; display: block; }
 
-  /* SECTIONS GRID (2 col) */
   .sections-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    margin-bottom: 64px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+    max-width: 1064px; margin-left: auto; margin-right: auto; margin-bottom: 64px;
   }
-  .section-cell {
-    padding: 40px 0;
-    border-top: 1px solid rgba(0,0,0,0.1);
-  }
+  .section-cell { padding: 40px 0; border-top: 1px solid rgba(0,0,0,0.1); }
   .section-cell:nth-child(odd) { padding-right: 48px; }
-  .section-cell:nth-child(even) {
-    padding-left: 48px;
-    border-left: 1px solid rgba(0,0,0,0.1);
-  }
+  .section-cell:nth-child(even) { padding-left: 48px; border-left: 1px solid rgba(0,0,0,0.1); }
   .section-heading {
-    font-size: 22px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    color: #1a1a1a;
-    margin-bottom: 16px;
+    font-size: 22px; font-weight: 400; letter-spacing: -0.02em;
+    color: #1a1a1a; margin-bottom: 16px;
   }
   .section-body {
-    font-size: 14px;
-    line-height: 1.75;
-    color: #3a3a3a;
-    letter-spacing: -0.005em;
+    font-size: 16px; line-height: 1.75; color: #3a3a3a; letter-spacing: -0.005em;
   }
-  .section-body strong { font-weight: 600; color: #1a1a1a; }
+  .section-body ul { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 8px; padding: 0; }
+  .section-body ul li { padding-left: 20px; position: relative; font-size: 16px; line-height: 1.75; color: #3a3a3a; }
+  .section-body ul li::before { content: '—'; position: absolute; left: 0; color: #bbb; }
 
-  /* FULL-WIDTH IMAGE CARD */
   .image-card {
-    background: #fff;
-    border-radius: 24px;
-    overflow: hidden;
-    margin-bottom: 64px;
-    min-height: 320px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: #fff; border-radius: 24px; overflow: hidden;
+    margin-bottom: 64px; width: 1064px; max-width: 1064px;
+    margin-left: auto; margin-right: auto;
   }
-  .image-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .image-placeholder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    color: #bbb;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 60px 0;
-  }
+  .image-card img { width: 100%; height: auto; display: block; }
 
-  /* SINGLE-COL SECTION */
-  .section-full {
-    padding: 40px 0;
-    border-top: 1px solid rgba(0,0,0,0.1);
-    margin-bottom: 0;
-  }
-  .section-full + .section-full { border-top: none; padding-top: 0; }
+  .impact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 24px; }
+  .impact-card { background: #fff; border-radius: 16px; padding: 22px 18px; }
+  .impact-number { font-size: 32px; font-weight: 400; letter-spacing: -0.04em; line-height: 1; margin-bottom: 8px; }
+  .impact-desc { font-size: 12px; color: #999; line-height: 1.5; }
 
-  /* IMPACT */
-  .impact-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    margin-top: 20px;
-  }
-  .impact-card {
-    background: #fff;
-    border-radius: 16px;
-    padding: 22px 18px;
-  }
-  .impact-number {
-    font-size: 32px;
-    font-weight: 400;
-    letter-spacing: -0.04em;
-    line-height: 1;
-    margin-bottom: 8px;
-  }
-  .impact-desc {
-    font-size: 12px;
-    color: #999;
-    line-height: 1.5;
-  }
-
-  /* OTHER WORKS */
-  .other-works {
-    border-top: 1px solid rgba(0,0,0,0.1);
-    padding: 56px 0 100px;
-    margin-top: 64px;
-  }
-  .other-works-title {
-    font-size: 22px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    margin-bottom: 28px;
-    color: #1a1a1a;
-  }
-  .other-works-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-  }
+  .other-works { border-top: 1px solid rgba(0,0,0,0.1); padding: 56px 0 100px; margin-top: 0; }
+  .other-works-inner { max-width: 1064px; margin-left: auto; margin-right: auto; }
+  .other-works-title { font-size: 22px; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 28px; }
+  .other-works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
   .work-card {
-    border-radius: 18px;
-    overflow: hidden;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    background: #fff;
+    border-radius: 18px; overflow: hidden; text-decoration: none;
+    color: inherit; display: block; background: #fff;
     transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s;
   }
-  .work-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 48px rgba(0,0,0,0.1);
-  }
-  .work-card-thumb {
-    width: 100%;
-    aspect-ratio: 16/10;
-  }
+  .work-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.1); }
+  .work-card-thumb { width: 100%; aspect-ratio: 16/10; }
   .c1 { background: #E8EDFF; }
   .c2 { background: #111827; }
-  .c3 { background: #E6F3FB; }
   .c4 { background: #F0E6FF; }
   .work-card-body { padding: 14px 18px 18px; }
   .work-card-date { font-size: 12px; color: #aaa; margin-bottom: 3px; }
   .work-card-title { font-size: 14px; font-weight: 400; letter-spacing: -0.01em; }
 
-  /* FOOTER */
-  footer {
-    background: #1a1a1a;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    padding: 18px 48px;
-    text-align: center;
-  }
+  footer { background: #1a1a1a; border-top: 1px solid rgba(255,255,255,0.06); padding: 18px 88px; text-align: center; }
   footer p { font-size: 12px; color: #3a3a3a; }
 
-  /* REVEAL */
-  .reveal {
-    opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 0.65s ease, transform 0.65s ease;
-  }
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.65s ease, transform 0.65s ease; }
   .reveal.vis { opacity: 1; transform: none; }
   .d1 { transition-delay: 0.07s; }
   .d2 { transition-delay: 0.14s; }
   .d3 { transition-delay: 0.21s; }
 
-  /* RESPONSIVE */
   @media (max-width: 700px) {
     nav { padding: 14px 24px; }
     .page-wrap { padding: 0 24px; }
     .sections-grid { grid-template-columns: 1fr; }
     .section-cell:nth-child(odd) { padding-right: 0; }
     .section-cell:nth-child(even) { padding-left: 0; border-left: none; }
-    .impact-grid { grid-template-columns: 1fr 1fr; }
     .other-works-grid { grid-template-columns: 1fr; }
-    footer { padding: 18px 20px; }
+    footer { padding: 18px 24px; }
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a href="/" class="nav-back" title="All work">
@@ -324,8 +150,8 @@
         <path d="M19 12H5M5 12l7 7M5 12l7-7"/>
       </svg>
     </a>
-    <a href="/#contact" class="btn-connect">
-      <span class="btn-connect-avatar">V</span>
+    <a href="https://t.me/g_valenti" target="_blank" class="btn-connect">
+      <span class="btn-connect-avatar"><img src="/images/valentina.jpg" alt="Valentina"></span>
       Let's connect
     </a>
   </div>
@@ -333,178 +159,173 @@
 
 <div class="page-wrap">
 
-  <!-- HERO -->
   <div class="case-hero">
-    <h1 class="case-title">Project 3</h1>
+    <h1 class="case-title">Anisad — Real Estate</h1>
     <div class="meta-row">
       <div class="meta-col">
         <span class="meta-label">Timeline</span>
-        <span class="meta-value">March 2025</span>
-      </div>
-      <div class="meta-col">
-        <span class="meta-label">Stack</span>
-        <span class="meta-value">No-code builder</span>
+        <span class="meta-value">2024</span>
       </div>
       <div class="meta-col">
         <span class="meta-label">Role</span>
-        <span class="meta-value">Sr. Growth Designer</span>
+        <span class="meta-value">Product Designer</span>
       </div>
       <div class="meta-col">
         <span class="meta-label">Team</span>
-        <span class="meta-value">Product Manager, Growth Manager</span>
+        <span class="meta-value">Product Manager, Marketing Team, Developers</span>
       </div>
     </div>
   </div>
 
-  <!-- COVER -->
   <div class="cover-card reveal">
-    <div class="cover-placeholder">
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.2">
-        <rect x="3" y="3" width="18" height="18" rx="2"/>
-        <path d="M3 9h18M9 21V9"/>
-      </svg>
-      Add cover image
-    </div>
+    <img src="/images/re-1.jpg" alt="Anisad Real Estate">
   </div>
 
-  <!-- SECTIONS: Problem + Insight -->
   <div class="sections-grid">
     <div class="section-cell reveal">
       <h2 class="section-heading">Problem</h2>
-      <p class="section-body">Our subscription page wasn't effective, because users mostly picked the <strong>weekly plan</strong>. The <strong>yearly option wasn't clear or attractive</strong>, so people didn't see the value.</p>
+      <div class="section-body">The existing website had poor navigation and an overloaded interface structure. Users found it difficult to quickly discover relevant properties and navigate through the catalog.<br><br>Additionally, the property listing submission flow was too long and complicated. Many users dropped off during onboarding and never published their listings.</div>
     </div>
     <div class="section-cell reveal d1">
       <h2 class="section-heading">Insight</h2>
-      <p class="section-body">From past data, we saw that when both options were shown in a <strong>simpler side-by-side layout</strong>, more users chose the yearly plan.</p>
+      <div class="section-body">For real estate platforms, it is critical that users:
+        <ul>
+          <li>quickly find relevant properties</li>
+          <li>receive clear and visually appealing information</li>
+          <li>complete key actions easily without unnecessary friction</li>
+        </ul>
+        The simpler the navigation and the clearer the property card structure, the higher the engagement, trust, and likelihood of registration or lead submission.<br><br>Reducing onboarding complexity also directly impacts the number of published listings on the platform.
+      </div>
     </div>
   </div>
 
-  <!-- SECTIONS: Goal + Key Task -->
   <div class="sections-grid">
     <div class="section-cell reveal">
       <h2 class="section-heading">Goal</h2>
-      <p class="section-body">We aimed to redesign the page to make the <strong>yearly benefits clearer</strong>, simplify the choice, and guide more users toward the <strong>annual subscription</strong>.</p>
+      <div class="section-body">Redesign the website experience to:
+        <ul>
+          <li>improve navigation</li>
+          <li>make property cards more modern and informative</li>
+          <li>increase user engagement</li>
+          <li>improve registrations and lead generation</li>
+          <li>simplify the property publishing flow</li>
+        </ul>
+      </div>
     </div>
     <div class="section-cell reveal d1">
-      <h2 class="section-heading">Key Task</h2>
-      <p class="section-body">The new subscription screen needed <strong>to drive more users to the annual plan</strong> (dpCVR annual). At the same time, it was important <strong>not to harm overall purchases</strong> (pCVR) <strong>or trial starts</strong> (tCVR). Our goal was a <strong>10–15% uplift</strong> by making the options clearer and easier to understand.</p>
+      <h2 class="section-heading">Research & Workshop</h2>
+      <div class="section-body">Together with the product and marketing teams, we analyzed user behavior and major drop-off points.<br><br>The research showed that:
+        <ul>
+          <li>users were getting lost in navigation</li>
+          <li>important property information was poorly structured</li>
+          <li>the interface looked visually outdated</li>
+          <li>the listing submission process contained too many steps and created frustration</li>
+        </ul>
+      </div>
     </div>
   </div>
 
-  <!-- IMAGE: Current version annotated -->
   <div class="image-card reveal">
-    <div class="image-placeholder">
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.2">
-        <rect x="3" y="3" width="18" height="18" rx="2"/>
-        <circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/>
-      </svg>
-      Add annotated image
-    </div>
+    <img src="/images/re-2.jpg" alt="Anisad Real Estate screens">
   </div>
 
-  <!-- SECTIONS: Competitors Research + Hypothesis -->
   <div class="sections-grid">
     <div class="section-cell reveal">
-      <h2 class="section-heading">Competitors Research</h2>
-      <p class="section-body">Analyzed top-grossing apps in the same category. Most successful paywalls used a <strong>side-by-side plan comparison</strong> with clear savings callout and a highlighted recommended option.</p>
-    </div>
-    <div class="section-cell reveal d1">
-      <h2 class="section-heading">Hypothesis</h2>
-      <p class="section-body"><strong>Hypothesis 1:</strong> Showing plans side-by-side with a visible savings badge will increase yearly plan selection.<br><br><strong>Hypothesis 2:</strong> Moving the free trial label to a more prominent position will increase overall trial starts without hurting annual conversions.</p>
-    </div>
-  </div>
-
-  <!-- SECTIONS: Design Options + Key Decisions -->
-  <div class="sections-grid">
-    <div class="section-cell reveal">
-      <h2 class="section-heading">Design Options</h2>
-      <p class="section-body">We explored <strong>4 design directions</strong>, each testing a different layout and messaging approach. Options were reviewed in a design workshop with the product and growth team.</p>
-    </div>
-    <div class="section-cell reveal d1">
       <h2 class="section-heading">Key Decisions</h2>
-      <p class="section-body">
-        — Prioritised the yearly plan visibility above the fold<br><br>
-        — Added a side-by-side layout with a "Save 60%" badge<br><br>
-        — Kept the free trial CTA prominent to protect tCVR
-      </p>
+      <div class="section-body">
+        <ul>
+          <li>Simplify navigation and catalog structure</li>
+          <li>Completely redesign the visual style of property cards</li>
+          <li>Improve information hierarchy within property listings</li>
+          <li>Add more visible CTAs for registration and lead submission</li>
+          <li>Reduce the number of steps required to publish a property</li>
+          <li>Make the property submission onboarding flow faster and easier to understand</li>
+        </ul>
+      </div>
+    </div>
+    <div class="section-cell reveal d1">
+      <h2 class="section-heading">Implementation</h2>
+      <div class="section-body">As part of the redesign, we updated:
+        <ul>
+          <li>the homepage</li>
+          <li>the real estate catalog</li>
+          <li>property cards</li>
+          <li>registration flows</li>
+          <li>the onboarding flow for adding new listings</li>
+        </ul>
+        After several design iterations and testing rounds, we improved the visual structure, simplified user flows, and reduced the number of actions required to publish a listing.
+      </div>
     </div>
   </div>
 
-  <!-- IMAGE: Design options grid -->
-  <div class="image-card reveal" style="min-height: 260px;">
-    <div class="image-placeholder">
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.2">
-        <rect x="3" y="3" width="18" height="18" rx="2"/>
-        <path d="M3 9h18M9 21V9"/>
-      </svg>
-      Add design options image
-    </div>
-  </div>
-
-  <!-- SECTIONS: Implementation + Impact heading -->
   <div class="sections-grid">
     <div class="section-cell reveal">
-      <h2 class="section-heading">Implementation</h2>
-      <p class="section-body">A/B test launched <strong>March 18–27, 2025</strong>. Built entirely in a no-code builder — shipped without any engineering resources. Equal traffic split across all variants.</p>
+      <h2 class="section-heading">Results</h2>
+      <div class="section-body">The new design helped:
+        <ul>
+          <li>increase the amount of time users spent on the website</li>
+          <li>improve registration rates</li>
+          <li>increase the number of leads and inquiries</li>
+          <li>improve overall user engagement</li>
+        </ul>
+      </div>
     </div>
     <div class="section-cell reveal d1">
       <h2 class="section-heading">Impact</h2>
-      <p class="section-body">The winning variant outperformed the control across all key metrics, with no negative effect on overall purchases or trial starts.</p>
+      <div class="section-body">Additionally:
+        <ul>
+          <li>the property submission onboarding flow was simplified</li>
+          <li>users published listings faster</li>
+          <li>the number of properties on the platform increased</li>
+          <li>onboarding completion rate improved by 20%</li>
+        </ul>
+      </div>
+      <div class="impact-grid">
+        <div class="impact-card">
+          <div class="impact-number">+20%</div>
+          <div class="impact-desc">Onboarding completion rate</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-number">↑</div>
+          <div class="impact-desc">Leads & registrations</div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- IMPACT NUMBERS -->
-  <div class="impact-grid reveal">
-    <div class="impact-card">
-      <div class="impact-number">+18%</div>
-      <div class="impact-desc">Annual plan conversion</div>
-    </div>
-    <div class="impact-card">
-      <div class="impact-number">+12%</div>
-      <div class="impact-desc">Overall paywall CVR</div>
-    </div>
-    <div class="impact-card">
-      <div class="impact-number">−9%</div>
-      <div class="impact-desc">Drop-off at checkout</div>
-    </div>
-    <div class="impact-card">
-      <div class="impact-number">+22%</div>
-      <div class="impact-desc">Trial starts (tCVR)</div>
-    </div>
-  </div>
-
-  <!-- OTHER WORKS -->
   <div class="other-works">
-    <div class="other-works-title reveal">Other Works</div>
-    <div class="other-works-grid">
-      <a href="/cases/project-1/" class="work-card reveal d1">
-        <div class="work-card-thumb c2"></div>
-        <div class="work-card-body">
-          <div class="work-card-date">Coming soon</div>
-          <div class="work-card-title">Project 1</div>
-        </div>
-      </a>
-      <a href="/cases/project-2/" class="work-card reveal d2">
-        <div class="work-card-thumb c3"></div>
-        <div class="work-card-body">
-          <div class="work-card-date">Coming soon</div>
-          <div class="work-card-title">Project 2</div>
-        </div>
-      </a>
-      <a href="/cases/project-4/" class="work-card reveal d3">
-        <div class="work-card-thumb c4"></div>
-        <div class="work-card-body">
-          <div class="work-card-date">Coming soon</div>
-          <div class="work-card-title">Project 4</div>
-        </div>
-      </a>
+    <div class="other-works-inner">
+      <div class="other-works-title reveal">Other Works</div>
+      <div class="other-works-grid">
+        <a href="/cases/project-1/" class="work-card reveal d1">
+          <div class="work-card-thumb c1"></div>
+          <div class="work-card-body">
+            <div class="work-card-date">2022</div>
+            <div class="work-card-title">IK-Onboarding — IntellectoKids</div>
+          </div>
+        </a>
+        <a href="/cases/project-2/" class="work-card reveal d2">
+          <div class="work-card-thumb c2"></div>
+          <div class="work-card-body">
+            <div class="work-card-date">2024</div>
+            <div class="work-card-title">Mobile App for AutoCar</div>
+          </div>
+        </a>
+        <a href="/cases/project-4/" class="work-card reveal d3">
+          <div class="work-card-thumb c4"></div>
+          <div class="work-card-body">
+            <div class="work-card-date">Coming soon</div>
+            <div class="work-card-title">Project 4</div>
+          </div>
+        </a>
+      </div>
     </div>
   </div>
 
-</div><!-- /page-wrap -->
+</div>
 
 <footer>
-  <p>Valentina Gushchina. All Rights Reserved</p>
+  <p>Valentina Gushchina. All Rights Reserved &nbsp;·&nbsp; <a href="mailto:valentinag9595@gmail.com" style="color:#3a3a3a; text-decoration:none;">valentinag9595@gmail.com</a></p>
 </footer>
 
 <script>
