@@ -504,13 +504,14 @@
 <!-- HERO -->
 <section id="hero">
   <div>
-    <h1 class="hero-title">
-      Hi, I'm Valentina <span class="hero-dash"></span><br>
-      a Product Growth Designer<br>
-      specializing in Growth &amp; Monetization.
+    <h1 class="hero-title" id="hero-title-anim">
+      <span class="hw">Hi,</span> <span class="hw">I'm</span> <span class="hw">Valentina</span><span class="hero-dash"></span><br>
+      <span class="hw">a</span> <span class="hw">Product</span> <span class="hw">Growth</span> <span class="hw">Designer</span><br>
+      <span class="hw">specializing</span> <span class="hw">in</span> <span class="hw">Growth</span> <span class="hw">&amp;</span> <span class="hw">Monetization.</span>
     </h1>
     <p class="hero-desc">
-      I specialize in growth design and user acquisition for <strong>B2C products</strong>. I create onboarding flows and product experiences that help improve <strong>conversion, retention, and user engagement</strong>.
+      I specialize in growth design and user acquisition for <strong>B2C products</strong>.<br>
+      I create onboarding flows and product experiences that help improve <strong>conversion, retention, and user engagement</strong>.
     </p>
     <a href="https://t.me/g_valenti" target="_blank" class="btn-cta">
       <span class="btn-cta-avatar"><img src="/images/valentina.jpg" alt="Valentina"></span>
@@ -744,6 +745,24 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
   }, { threshold: 0.08 });
   reveals.forEach(el => io.observe(el));
+
+  // Word-by-word hero animation
+  const words = document.querySelectorAll('#hero-title-anim .hw');
+  words.forEach((w, i) => {
+    w.style.opacity = '0';
+    w.style.transform = 'translateY(20px)';
+    w.style.display = 'inline-block';
+    w.style.transition = 'opacity 0.45s ease, transform 0.45s ease';
+    w.style.transitionDelay = (0.1 + i * 0.06) + 's';
+  });
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      words.forEach(w => {
+        w.style.opacity = '1';
+        w.style.transform = 'translateY(0)';
+      });
+    });
+  });
 </script>
 </body>
 </html>
