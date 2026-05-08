@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Project Title — Valentina Gushchina</title>
+<title>IK-Onboarding — Valentina Gushchina</title>
+<link rel="icon" type="image/png" href="/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -26,7 +27,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 16px 48px;
+    padding: 16px 88px;
     background: #F0EFEB;
     animation: navDown 0.7s both;
   }
@@ -34,60 +35,39 @@
     from { opacity: 0; transform: translateY(-12px); }
     to   { opacity: 1; transform: translateY(0); }
   }
-  .nav-inner {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
+  .nav-inner { display: flex; align-items: center; gap: 16px; }
   .nav-back {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
     width: 34px; height: 34px;
     border-radius: 50%;
-    background: transparent;
     border: 1px solid rgba(0,0,0,0.15);
-    text-decoration: none;
-    color: #1a1a1a;
+    text-decoration: none; color: #1a1a1a;
     transition: background 0.2s;
-    flex-shrink: 0;
   }
   .nav-back:hover { background: rgba(0,0,0,0.05); }
   .btn-connect {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: #1a1a1a;
-    color: #fff;
-    text-decoration: none;
-    font-size: 14px;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #1a1a1a; color: #fff;
+    text-decoration: none; font-size: 14px;
     padding: 8px 16px 8px 8px;
     border-radius: 100px;
     transition: opacity 0.2s;
   }
   .btn-connect:hover { opacity: 0.8; }
   .btn-connect-avatar {
-    width: 26px; height: 26px;
-    border-radius: 50%;
-    background: #444;
+    width: 26px; height: 26px; border-radius: 50%;
+    background: #444; overflow: hidden; flex-shrink: 0;
     display: flex; align-items: center; justify-content: center;
     font-size: 11px; color: #fff; font-weight: 500;
-    overflow: hidden;
-    flex-shrink: 0;
   }
   .btn-connect-avatar img { width:100%; height:100%; object-fit:cover; }
 
   /* PAGE WRAP */
-  .page-wrap {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 88px;
-  }
+  .page-wrap { max-width: 1440px; margin: 0 auto; padding: 0 88px; }
 
   /* HERO */
   .case-hero {
-    padding-top: 110px;
-    padding-bottom: 48px;
+    padding-top: 110px; padding-bottom: 48px;
     opacity: 0;
     animation: fadeUp 0.9s 0.15s cubic-bezier(0.22,1,0.36,1) forwards;
   }
@@ -97,183 +77,88 @@
   }
   .case-title {
     font-size: clamp(32px, 5vw, 56px);
-    font-weight: 400;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
-    color: #1a1a1a;
-    margin-bottom: 32px;
+    font-weight: 400; letter-spacing: -0.03em; line-height: 1.1;
+    color: #1a1a1a; margin-bottom: 32px;
   }
-
-  /* META */
   .meta-row {
-    display: flex;
-    gap: 48px;
-    flex-wrap: wrap;
+    display: flex; gap: 48px; flex-wrap: wrap;
     opacity: 0;
     animation: fadeUp 0.9s 0.28s cubic-bezier(0.22,1,0.36,1) forwards;
   }
   .meta-col { display: flex; flex-direction: column; gap: 4px; }
-  .meta-label {
-    font-size: 12px;
-    color: #999;
-    font-weight: 400;
-  }
-  .meta-value {
-    font-size: 15px;
-    color: #1a1a1a;
-    font-weight: 400;
-  }
+  .meta-label { font-size: 12px; color: #999; }
+  .meta-value { font-size: 15px; color: #1a1a1a; }
 
-  /* COVER CARD */
+  /* COVER */
   .cover-card {
-    background: #fff;
-    border-radius: 24px;
-    overflow: hidden;
+    background: #fff; border-radius: 24px; overflow: hidden;
     margin-bottom: 64px;
     opacity: 0;
     animation: fadeUp 0.9s 0.4s cubic-bezier(0.22,1,0.36,1) forwards;
-    min-height: 360px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
-  .cover-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .cover-card img { width: 100%; display: block; }
   .cover-placeholder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    color: #bbb;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 80px 0;
+    min-height: 360px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 12px;
+    color: #bbb; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em;
   }
 
-  /* SECTIONS GRID (2 col) */
+  /* SECTIONS GRID */
   .sections-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    margin-bottom: 64px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 0; margin-bottom: 64px;
   }
-  .section-cell {
-    padding: 40px 0;
-    border-top: 1px solid rgba(0,0,0,0.1);
-  }
+  .section-cell { padding: 40px 0; border-top: 1px solid rgba(0,0,0,0.1); }
   .section-cell:nth-child(odd) { padding-right: 48px; }
-  .section-cell:nth-child(even) {
-    padding-left: 48px;
-    border-left: 1px solid rgba(0,0,0,0.1);
-  }
+  .section-cell:nth-child(even) { padding-left: 48px; border-left: 1px solid rgba(0,0,0,0.1); }
+
   .section-heading {
-    font-size: 22px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    color: #1a1a1a;
-    margin-bottom: 16px;
+    font-size: 22px; font-weight: 400; letter-spacing: -0.02em;
+    color: #1a1a1a; margin-bottom: 16px;
   }
   .section-body {
-    font-size: 14px;
-    line-height: 1.75;
-    color: #3a3a3a;
-    letter-spacing: -0.005em;
+    font-size: 14px; line-height: 1.75; color: #3a3a3a; letter-spacing: -0.005em;
   }
   .section-body strong { font-weight: 600; color: #1a1a1a; }
+  .section-body ul { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
+  .section-body ul li { padding-left: 16px; position: relative; }
+  .section-body ul li::before { content: '—'; position: absolute; left: 0; color: #bbb; }
 
-  /* FULL-WIDTH IMAGE CARD */
+  /* IMAGE CARD */
   .image-card {
-    background: #fff;
-    border-radius: 24px;
-    overflow: hidden;
+    background: #fff; border-radius: 24px; overflow: hidden;
     margin-bottom: 64px;
-    min-height: 320px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
-  .image-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .image-card img { width: 100%; display: block; }
   .image-placeholder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    color: #bbb;
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 60px 0;
+    min-height: 280px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 10px;
+    color: #bbb; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em;
   }
-
-  /* SINGLE-COL SECTION */
-  .section-full {
-    padding: 40px 0;
-    border-top: 1px solid rgba(0,0,0,0.1);
-    margin-bottom: 0;
-  }
-  .section-full + .section-full { border-top: none; padding-top: 0; }
 
   /* IMPACT */
   .impact-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    margin-top: 20px;
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 12px; margin-top: 20px;
   }
-  .impact-card {
-    background: #fff;
-    border-radius: 16px;
-    padding: 22px 18px;
-  }
+  .impact-card { background: #fff; border-radius: 16px; padding: 22px 18px; }
   .impact-number {
-    font-size: 32px;
-    font-weight: 400;
-    letter-spacing: -0.04em;
-    line-height: 1;
-    margin-bottom: 8px;
+    font-size: 32px; font-weight: 400; letter-spacing: -0.04em;
+    line-height: 1; margin-bottom: 8px;
   }
-  .impact-desc {
-    font-size: 12px;
-    color: #999;
-    line-height: 1.5;
-  }
+  .impact-desc { font-size: 12px; color: #999; line-height: 1.5; }
 
   /* OTHER WORKS */
-  .other-works {
-    border-top: 1px solid rgba(0,0,0,0.1);
-    padding: 56px 0 100px;
-    margin-top: 64px;
-  }
-  .other-works-title {
-    font-size: 22px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    margin-bottom: 28px;
-    color: #1a1a1a;
-  }
-  .other-works-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-  }
+  .other-works { border-top: 1px solid rgba(0,0,0,0.1); padding: 56px 0 100px; margin-top: 64px; }
+  .other-works-title { font-size: 22px; font-weight: 400; letter-spacing: -0.02em; margin-bottom: 28px; }
+  .other-works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
   .work-card {
-    border-radius: 18px;
-    overflow: hidden;
-    text-decoration: none;
-    color: inherit;
-    display: block;
-    background: #fff;
+    border-radius: 18px; overflow: hidden; text-decoration: none;
+    color: inherit; display: block; background: #fff;
     transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s;
   }
-  .work-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 48px rgba(0,0,0,0.1);
-  }
-  .work-card-thumb {
-    width: 100%;
-    aspect-ratio: 16/10;
-  }
-  .c1 { background: #E8EDFF; }
+  .work-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,0.1); }
+  .work-card-thumb { width: 100%; aspect-ratio: 16/10; }
   .c2 { background: #111827; }
   .c3 { background: #E6F3FB; }
   .c4 { background: #F0E6FF; }
@@ -282,20 +167,11 @@
   .work-card-title { font-size: 14px; font-weight: 400; letter-spacing: -0.01em; }
 
   /* FOOTER */
-  footer {
-    background: #1a1a1a;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    padding: 18px 48px;
-    text-align: center;
-  }
+  footer { background: #1a1a1a; border-top: 1px solid rgba(255,255,255,0.06); padding: 18px 88px; text-align: center; }
   footer p { font-size: 12px; color: #3a3a3a; }
 
   /* REVEAL */
-  .reveal {
-    opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 0.65s ease, transform 0.65s ease;
-  }
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.65s ease, transform 0.65s ease; }
   .reveal.vis { opacity: 1; transform: none; }
   .d1 { transition-delay: 0.07s; }
   .d2 { transition-delay: 0.14s; }
@@ -310,13 +186,12 @@
     .section-cell:nth-child(even) { padding-left: 0; border-left: none; }
     .impact-grid { grid-template-columns: 1fr 1fr; }
     .other-works-grid { grid-template-columns: 1fr; }
-    footer { padding: 18px 20px; }
+    footer { padding: 18px 24px; }
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a href="/" class="nav-back" title="All work">
@@ -324,8 +199,8 @@
         <path d="M19 12H5M5 12l7 7M5 12l7-7"/>
       </svg>
     </a>
-    <a href="/#contact" class="btn-connect">
-      <span class="btn-connect-avatar">V</span>
+    <a href="https://t.me/g_valenti" target="_blank" class="btn-connect">
+      <span class="btn-connect-avatar"><img src="/images/valentina.jpg" alt="Valentina"></span>
       Let's connect
     </a>
   </div>
@@ -335,11 +210,11 @@
 
   <!-- HERO -->
   <div class="case-hero">
-    <h1 class="case-title">Project 1</h1>
+    <h1 class="case-title">IK-Onboarding — IntellectoKids</h1>
     <div class="meta-row">
       <div class="meta-col">
         <span class="meta-label">Timeline</span>
-        <span class="meta-value">March 2025</span>
+        <span class="meta-value">2024</span>
       </div>
       <div class="meta-col">
         <span class="meta-label">Stack</span>
@@ -358,118 +233,122 @@
 
   <!-- COVER -->
   <div class="cover-card reveal">
-    <div class="cover-placeholder">
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.2">
-        <rect x="3" y="3" width="18" height="18" rx="2"/>
-        <path d="M3 9h18M9 21V9"/>
-      </svg>
-      Add cover image
-    </div>
+    <img src="/images/ik-cover.png" alt="IK-Onboarding cover" onerror="this.parentElement.innerHTML='<div class=cover-placeholder><svg width=40 height=40 viewBox=&quot;0 0 24 24&quot; fill=none stroke=&quot;#ccc&quot; stroke-width=1.2><rect x=3 y=3 width=18 height=18 rx=2/><path d=&quot;M3 9h18M9 21V9&quot;/></svg>Add cover image</div>'">
   </div>
 
-  <!-- SECTIONS: Problem + Insight -->
+  <!-- Problem + Insight -->
   <div class="sections-grid">
     <div class="section-cell reveal">
       <h2 class="section-heading">Problem</h2>
-      <p class="section-body">Our subscription page wasn't effective, because users mostly picked the <strong>weekly plan</strong>. The <strong>yearly option wasn't clear or attractive</strong>, so people didn't see the value.</p>
+      <p class="section-body">Our subscription screen was not performing effectively because most users chose the 7-day trial plan. The 3-month subscription was not visible or attractive enough, so users did not fully understand its value.</p>
     </div>
     <div class="section-cell reveal d1">
       <h2 class="section-heading">Insight</h2>
-      <p class="section-body">From past data, we saw that when both options were shown in a <strong>simpler side-by-side layout</strong>, more users chose the yearly plan.</p>
+      <p class="section-body">User behavior analysis showed that people respond better to screens where pricing and subscription options are visible immediately, without requiring scrolling. Limited-time offers, simple layouts, and clear visual hierarchy help users make decisions faster and increase interest in longer subscription plans.</p>
     </div>
   </div>
 
-  <!-- SECTIONS: Goal + Key Task -->
+  <!-- Goal + Key Task -->
   <div class="sections-grid">
     <div class="section-cell reveal">
       <h2 class="section-heading">Goal</h2>
-      <p class="section-body">We aimed to redesign the page to make the <strong>yearly benefits clearer</strong>, simplify the choice, and guide more users toward the <strong>annual subscription</strong>.</p>
+      <p class="section-body">Redesign the subscription screen to:
+        <ul>
+          <li>make pricing plans easier to compare</li>
+          <li>increase visibility of the 3-month plan</li>
+          <li>strengthen purchase motivation</li>
+          <li>improve overall subscription conversion without negatively affecting trial starts</li>
+        </ul>
+      </p>
     </div>
     <div class="section-cell reveal d1">
       <h2 class="section-heading">Key Task</h2>
-      <p class="section-body">The new subscription screen needed <strong>to drive more users to the annual plan</strong> (dpCVR annual). At the same time, it was important <strong>not to harm overall purchases</strong> (pCVR) <strong>or trial starts</strong> (tCVR). Our goal was a <strong>10–15% uplift</strong> by making the options clearer and easier to understand.</p>
+      <p class="section-body">The new paywall needed to increase conversion into the 3-month plan while maintaining strong performance for trials and short-term subscriptions. The main focus was simplifying decision-making, reducing distracting elements, and reinforcing value through visual hierarchy and urgency mechanics.</p>
     </div>
   </div>
 
-  <!-- IMAGE: Current version annotated -->
+  <!-- Image 1 -->
   <div class="image-card reveal">
-    <div class="image-placeholder">
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.2">
-        <rect x="3" y="3" width="18" height="18" rx="2"/>
-        <circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/>
-      </svg>
-      Add annotated image
+    <img src="/images/ik-paywall.png" alt="Paywall A/B comparison" onerror="this.parentElement.innerHTML='<div class=image-placeholder><svg width=36 height=36 viewBox=&quot;0 0 24 24&quot; fill=none stroke=&quot;#ccc&quot; stroke-width=1.2><rect x=3 y=3 width=18 height=18 rx=2/><path d=&quot;M3 9h18M9 21V9&quot;/></svg>Paywall A/B comparison</div>'">
+  </div>
+
+  <!-- Competitor Research + Hypothesis 1 -->
+  <div class="sections-grid">
+    <div class="section-cell reveal">
+      <h2 class="section-heading">Competitor Research</h2>
+      <p class="section-body">I analyzed paywall solutions used in educational and family-focused mobile apps. The most successful screens included:
+        <ul>
+          <li>simple plan comparison</li>
+          <li>before-and-after comparisons</li>
+          <li>emphasis on the "best offer"</li>
+          <li>urgency elements such as countdown timers and limited-time discounts</li>
+          <li>pricing and subscription options displayed immediately on the first screen</li>
+        </ul>
+        This research helped define the redesign direction.
+      </p>
+    </div>
+    <div class="section-cell reveal d1">
+      <h2 class="section-heading">Hypothesis 1 — Pricing Visibility Above the Fold</h2>
+      <p class="section-body">In the previous version, users first saw marketing content and only later reached the subscription options. This slowed down decision-making and reduced attention to the pricing plans.<br><br>Displaying subscription options immediately would simplify the decision process and reduce unnecessary friction.</p>
     </div>
   </div>
 
-  <!-- SECTIONS: Competitors Research + Hypothesis -->
+  <!-- Hypothesis 2 -->
   <div class="sections-grid">
     <div class="section-cell reveal">
-      <h2 class="section-heading">Competitors Research</h2>
-      <p class="section-body">Analyzed top-grossing apps in the same category. Most successful paywalls used a <strong>side-by-side plan comparison</strong> with clear savings callout and a highlighted recommended option.</p>
+      <h2 class="section-heading">Hypothesis 2 — Stronger Focus on the Main Offer</h2>
+      <p class="section-body">The 3-month plan existed in the old design but visually competed with other interface elements. By making it the primary visual focus — through stronger contrast, a "Best Price" badge, and more prominent visual treatment — users would perceive it as the recommended option.</p>
     </div>
     <div class="section-cell reveal d1">
-      <h2 class="section-heading">Hypothesis</h2>
-      <p class="section-body"><strong>Hypothesis 1:</strong> Showing plans side-by-side with a visible savings badge will increase yearly plan selection.<br><br><strong>Hypothesis 2:</strong> Moving the free trial label to a more prominent position will increase overall trial starts without hurting annual conversions.</p>
-    </div>
-  </div>
-
-  <!-- SECTIONS: Design Options + Key Decisions -->
-  <div class="sections-grid">
-    <div class="section-cell reveal">
-      <h2 class="section-heading">Design Options</h2>
-      <p class="section-body">We explored <strong>4 design directions</strong>, each testing a different layout and messaging approach. Options were reviewed in a design workshop with the product and growth team.</p>
-    </div>
-    <div class="section-cell reveal d1">
-      <h2 class="section-heading">Key Decisions</h2>
-      <p class="section-body">
-        — Prioritised the yearly plan visibility above the fold<br><br>
-        — Added a side-by-side layout with a "Save 60%" badge<br><br>
-        — Kept the free trial CTA prominent to protect tCVR
+      <h2 class="section-heading">Implementation</h2>
+      <p class="section-body">The updated subscription screen was launched as an A/B test comparing the current and redesigned paywall versions.<br><br>During the test, we analyzed:
+        <ul>
+          <li>subscription conversion</li>
+          <li>interaction with pricing plans</li>
+          <li>selection of the primary offer</li>
+          <li>impact on trial activation</li>
+        </ul>
       </p>
     </div>
   </div>
 
-  <!-- IMAGE: Design options grid -->
-  <div class="image-card reveal" style="min-height: 260px;">
-    <div class="image-placeholder">
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#ccc" stroke-width="1.2">
-        <rect x="3" y="3" width="18" height="18" rx="2"/>
-        <path d="M3 9h18M9 21V9"/>
-      </svg>
-      Add design options image
-    </div>
+  <!-- Image 2 -->
+  <div class="image-card reveal">
+    <img src="/images/ik-onboarding.png" alt="Onboarding flow A/B comparison" onerror="this.parentElement.innerHTML='<div class=image-placeholder><svg width=36 height=36 viewBox=&quot;0 0 24 24&quot; fill=none stroke=&quot;#ccc&quot; stroke-width=1.2><rect x=3 y=3 width=18 height=18 rx=2/><path d=&quot;M3 9h18M9 21V9&quot;/></svg>Onboarding flow A/B comparison</div>'">
   </div>
 
-  <!-- SECTIONS: Implementation + Impact heading -->
+  <!-- Image 3 -->
+  <div class="image-card reveal">
+    <img src="/images/ik-addons.png" alt="Add-ons screens" onerror="this.parentElement.innerHTML='<div class=image-placeholder><svg width=36 height=36 viewBox=&quot;0 0 24 24&quot; fill=none stroke=&quot;#ccc&quot; stroke-width=1.2><rect x=3 y=3 width=18 height=18 rx=2/><path d=&quot;M3 9h18M9 21V9&quot;/></svg>Add-ons screens</div>'">
+  </div>
+
+  <!-- Result -->
   <div class="sections-grid">
     <div class="section-cell reveal">
-      <h2 class="section-heading">Implementation</h2>
-      <p class="section-body">A/B test launched <strong>March 18–27, 2025</strong>. Built entirely in a no-code builder — shipped without any engineering resources. Equal traffic split across all variants.</p>
+      <h2 class="section-heading">Result</h2>
+      <p class="section-body">The new design:
+        <ul>
+          <li>increased visibility of the main offer</li>
+          <li>made subscription choices clearer</li>
+          <li>reduced cognitive load during decision-making</li>
+          <li>strengthened purchase motivation through urgency mechanics</li>
+          <li>improved the overall effectiveness of the paywall flow</li>
+        </ul>
+      </p>
     </div>
     <div class="section-cell reveal d1">
       <h2 class="section-heading">Impact</h2>
-      <p class="section-body">The winning variant outperformed the control across all key metrics, with no negative effect on overall purchases or trial starts.</p>
-    </div>
-  </div>
-
-  <!-- IMPACT NUMBERS -->
-  <div class="impact-grid reveal">
-    <div class="impact-card">
-      <div class="impact-number">+18%</div>
-      <div class="impact-desc">Annual plan conversion</div>
-    </div>
-    <div class="impact-card">
-      <div class="impact-number">+12%</div>
-      <div class="impact-desc">Overall paywall CVR</div>
-    </div>
-    <div class="impact-card">
-      <div class="impact-number">−9%</div>
-      <div class="impact-desc">Drop-off at checkout</div>
-    </div>
-    <div class="impact-card">
-      <div class="impact-number">+22%</div>
-      <div class="impact-desc">Trial starts (tCVR)</div>
+      <p class="section-body">As a result, we observed a significant increase in conversion to paying customers.</p>
+      <div class="impact-grid" style="grid-template-columns: 1fr 1fr; margin-top: 20px;">
+        <div class="impact-card">
+          <div class="impact-number">+45%</div>
+          <div class="impact-desc">Conversion to paying customers</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-number">↑</div>
+          <div class="impact-desc">3-month plan selection rate</div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -501,10 +380,10 @@
     </div>
   </div>
 
-</div><!-- /page-wrap -->
+</div>
 
 <footer>
-  <p>Valentina Gushchina. All Rights Reserved</p>
+  <p>Valentina Gushchina. All Rights Reserved &nbsp;·&nbsp; <a href="mailto:valentinag9595@gmail.com" style="color:#3a3a3a; text-decoration:none;">valentinag9595@gmail.com</a></p>
 </footer>
 
 <script>
