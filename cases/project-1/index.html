@@ -125,9 +125,10 @@
     font-size: 16px; line-height: 1.75; color: #3a3a3a; letter-spacing: -0.005em;
   }
   .section-body strong { font-weight: 600; color: #1a1a1a; }
-  .section-body ul { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 8px; }
-  .section-body ul li { padding-left: 16px; position: relative; font-family: 'Inter', sans-serif; font-size: 16px; }
+  .section-body ul { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-top: 8px; margin-bottom: 0; padding: 0; }
+  .section-body ul li { padding-left: 20px; position: relative; font-family: 'Inter', sans-serif; font-size: 16px; line-height: 1.75; color: #3a3a3a; }
   .section-body ul li::before { content: '—'; position: absolute; left: 0; color: #bbb; }
+  .section-body p { margin: 0; }
 
   /* IMAGE CARD */
   .image-card {
@@ -260,14 +261,14 @@
   <div class="sections-grid">
     <div class="section-cell reveal">
       <h2 class="section-heading">Goal</h2>
-      <p class="section-body">Redesign the subscription screen to:
+      <div class="section-body">Redesign the subscription screen to:
         <ul>
           <li>make pricing plans easier to compare</li>
           <li>increase visibility of the 3-month plan</li>
           <li>strengthen purchase motivation</li>
           <li>improve overall subscription conversion without negatively affecting trial starts</li>
         </ul>
-      </p>
+      </div>
     </div>
     <div class="section-cell reveal d1">
       <h2 class="section-heading">Key Task</h2>
@@ -284,7 +285,7 @@
   <div class="sections-grid">
     <div class="section-cell reveal">
       <h2 class="section-heading">Competitor Research</h2>
-      <p class="section-body">I analyzed paywall solutions used in educational and family-focused mobile apps. The most successful screens included:
+      <div class="section-body">I analyzed paywall solutions used in educational and family-focused mobile apps. The most successful screens included:
         <ul>
           <li>simple plan comparison</li>
           <li>before-and-after comparisons</li>
@@ -293,7 +294,7 @@
           <li>pricing and subscription options displayed immediately on the first screen</li>
         </ul>
         This research helped define the redesign direction.
-      </p>
+      </div>
     </div>
     <div class="section-cell reveal d1">
       <h2 class="section-heading">Hypothesis 1 — Pricing Visibility Above the Fold</h2>
@@ -309,14 +310,14 @@
     </div>
     <div class="section-cell reveal d1">
       <h2 class="section-heading">Implementation</h2>
-      <p class="section-body">The updated subscription screen was launched as an A/B test comparing the current and redesigned paywall versions.<br><br>During the test, we analyzed:
+      <div class="section-body">The updated subscription screen was launched as an A/B test comparing the current and redesigned paywall versions.<br><br>During the test, we analyzed:
         <ul>
           <li>subscription conversion</li>
           <li>interaction with pricing plans</li>
           <li>selection of the primary offer</li>
           <li>impact on trial activation</li>
         </ul>
-      </p>
+      </div>
     </div>
   </div>
 
@@ -334,7 +335,7 @@
   <div class="sections-grid">
     <div class="section-cell reveal">
       <h2 class="section-heading">Result</h2>
-      <p class="section-body">The new design:
+      <div class="section-body">The new design:
         <ul>
           <li>increased visibility of the main offer</li>
           <li>made subscription choices clearer</li>
@@ -342,7 +343,7 @@
           <li>strengthened purchase motivation through urgency mechanics</li>
           <li>improved the overall effectiveness of the paywall flow</li>
         </ul>
-      </p>
+      </div>
     </div>
     <div class="section-cell reveal d1">
       <h2 class="section-heading">Impact</h2>
